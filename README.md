@@ -6,6 +6,8 @@ Documentação Oficial do Power BI: https://www.microsoft.com/pt-br/power-platfo
 
 Documentação Oficial da Linguagem M (a mesma linguagem do power query): https://learn.microsoft.com/pt-br/powerquery-m/
 
+Documentação Oficial do DAX: https://learn.microsoft.com/pt-br/dax/dax-overview
+
 # License
 
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](./LICENSE)
