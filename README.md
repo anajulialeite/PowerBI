@@ -4,6 +4,8 @@ Este repositório foi criado para guardar os exercícios práticos do Curso de P
 
 Documentação Oficial do Power BI: https://www.microsoft.com/pt-br/power-platform/products/power-bi/
 
+Documentação Oficial da Linguagem M (a mesma linguagem do power query): https://learn.microsoft.com/pt-br/powerquery-m/
+
 # License
 
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](./LICENSE)
