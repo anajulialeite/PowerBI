@@ -1,0 +1,82 @@
+Absenteísmo = DIVIDE(SUM(F_Registros[horas_faltantes]),SUM(F_Registros[horas_trabalhadas]))
+
+
+Total Contratacoes = DISTINCTCOUNT(F_Registros[cpf_func]) 
+
+Total Horas Extras = SUM(F_Registros[Valor Horas Extras])
+
+Total Salario = Sum(F_Registros[salario])
+
+
+Total Beneficio Plano.O = SUM(F_Registros[plano_odontologico])
+
+Total Beneficio Plano.Saude = SUM(F_Registros[plano_saude])
+
+Total Beneficio VA = SUM(F_Registros[valor_vr])
+
+Total Beneficio VT = SUM(F_Registros[valor_vt])
+
+Total Beneficios = [Total Beneficio Plano.O] + [Total Beneficio Plano.Saude] + [Total Beneficio VA] +[Total Beneficio VT]
+
+Total Colaboradores Ativos = 
+    CALCULATE(
+        [Total Contratacoes],
+        FILTER(
+            F_Registros,
+            F_Registros[data_demissao] = BLANK()
+        )
+    )
+	
+	Total Colaboradores Demitidos = 
+    CALCULATE(
+        [Total Contratacoes],
+        FILTER(
+            F_Registros,
+            NOT(ISBLANK(F_Registros[data_demissao]))
+        )
+    )
+
+
+
+
+
+Total_F Feminino = 
+    CALCULATE(
+        [Total Contratacoes],
+        FILTER(
+            F_Registros,
+            F_Registros[genero_func] == "Feminino"
+        )
+    )
+	
+	Total_F Masculino = 
+    CALCULATE(
+        [Total Contratacoes],
+        FILTER(
+            F_Registros,
+            F_Registros[genero_func] ="Masculino"
+        )
+    )
+
+
+Demitidos = CALCULATE([Total Colaboradores Demitidos],USERELATIONSHIP(D_Calendario[Data],F_Registros[data_demissao]))
+
+	
+Turnover = (([Total Contratacoes]  + [Demitidos]) / 2) / [Total Colaboradores Ativos]
+
+
+/*A faixa étaria é uma coluna calculada
+
+Faixa Etária = 
+SWITCH(
+    TRUE(),
+    F_Registros[Idade] >= 0 && F_Registros[Idade] <= 18, "0-18",
+    F_Registros[Idade] >= 19 && F_Registros[Idade] <= 25, "19-25",
+    F_Registros[Idade] >= 26 && F_Registros[Idade] <= 45, "26-45",
+    F_Registros[Idade] >= 46 && F_Registros[Idade] <= 55, "46-55",
+    F_Registros[Idade] > 55, ">55",
+    "Outras Faixas"
+)
+	
+
+
