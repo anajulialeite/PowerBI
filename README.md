@@ -34,4 +34,3 @@ Todos os dados utilizados nos projetos deste repositório são **fictícios** e 
 ## Licença
 
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](./LICENSE)
-
