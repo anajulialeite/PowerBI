@@ -1,5 +1,7 @@
 # 📊 Power BI
 
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/r/r-plain.svg" align="center" width="90"/>
+
 Este repositório foi criado para armazenar os exercícios práticos do curso de Power BI oferecido pela Data Science Academy, bem como os projetos desenvolvidos durante a disciplina de Business Intelligence, ministrada pelo professor Wesley Neves.
 
 ---
